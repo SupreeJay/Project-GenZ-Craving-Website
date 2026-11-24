@@ -1,0 +1,48 @@
+/* Base Typography & Smoothing */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #141414;
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Product Packaging Studio Visuals */
+.studio-shadow {
+  box-shadow: 0 28px 50px -18px rgba(20, 20, 20, 0.16),
+              0 8px 20px -8px rgba(255, 90, 0, 0.12);
+}
+
+.pouch-crease {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 18%,
+    rgba(0, 0, 0, 0.03) 50%,
+    rgba(255, 255, 255, 0.28) 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.grain-overlay {
+  background-image: radial-gradient(rgba(20, 20, 20, 0.04) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* Reseller Section Accent */
+.reseller-card {
+  box-shadow: 0 24px 48px -24px rgba(255, 90, 0, 0.18);
+}
+
+/* Hide Horizontal Scrollbar on Customer Reviews Track */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

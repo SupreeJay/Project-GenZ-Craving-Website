@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GENZ CRAVINGS — Snacking, Upgraded for GenZ</title>
+  
+  <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#FF5A00',
+              orangeHover: '#E04F00',
+              white: '#FFFFFF',
+              charcoal: '#141414',
+              muted: '#595959',
+              surface: '#F8F8F7',
+              border: '#E5E5E5',
+            }
+          },
+          fontFamily: {
+            display: ['"Space Grotesk"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-brand-white text-brand-charcoal selection:bg-brand-orange selection:text-white overflow-x-hidden">
+
+  <!-- ==================== 1. NAVIGATION BAR ==================== -->
+  <header class="sticky top-0 z-40 bg-brand-white/95 backdrop-blur-sm border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
+      <!-- Left: Brand Wordmark -->
+      <a href="#" class="font-display font-bold text-xl sm:text-2xl tracking-[-0.04em] text-brand-charcoal flex items-center gap-2">
+        <img src="./Picture Folder/IMG_8612-removebg-preview.png" style="width: 60%;" alt="Genz Cravings">
+      </a>
+
+      <!-- Center: Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-9 text-sm font-medium text-brand-charcoal/80">
+        <a href="#our-story" class="hover:text-brand-orange transition-colors duration-200">About Us</a>
+        <a href="#the-drop" class="hover:text-brand-orange transition-colors duration-200">Our Products</a>
+        <a href="#reviews" class="hover:text-brand-orange transition-colors duration-200">Customer Review</a>
+        <a href="#resellers" class="hover:text-brand-orange transition-colors duration-200">Stock Genz</a>
+      </nav>
+
+      <!-- Right: Mobile Menu Trigger -->
+      <div class="flex items-center gap-3">
+        <button
+          id="mobile-menu-btn"
+          aria-label="Toggle Menu"
+          onclick="toggleMobileMenu()"
+          class="md:hidden p-2.5 rounded-lg border border-brand-border text-brand-charcoal hover:border-brand-orange transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-white border-b border-brand-border px-5 py-5 space-y-3">
+      <a href="#our-story" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-charcoal hover:text-brand-orange">About Us</a>
+      <a href="#the-drop" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-charcoal hover:text-brand-orange">Our Products</a>
+      <a href="#why-us" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-charcoal hover:text-brand-orange">Why Us</a>
+      <a href="#reviews" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-charcoal hover:text-brand-orange">Reviews</a>
+      <a href="#resellers" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-brand-orange font-semibold">Stock Genz</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 2. HERO / INTRODUCTION SECTION ==================== -->
+    <section class="border-b border-brand-border">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-20 lg:py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Left Column: Copy -->
+          <div class="lg:col-span-7 lg:pr-10">
+            <h1 class="font-display font-bold text-4xl sm:text-6xl lg:text-[68px] leading-[1.03] tracking-[-0.03em] text-brand-charcoal mb-6">
+              Snacking, upgraded for GenZ.
+            </h1>
+
+            <p class="text-base sm:text-lg text-brand-muted leading-relaxed max-w-xl mb-10">
+              Our Philosophy is simple: snacking should be more than just eating something to satisfy hunger. It should be an experience
+            </p>
+
+            <div class="flex flex-wrap items-center gap-5">
+              <a
+                href="#the-drop"
+                class="bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold text-sm sm:text-base px-8 py-4 rounded-full transition-colors duration-200 inline-flex items-center justify-center"
+              >
+                Grab Your Bag
+              </a>
+              <a
+                href="#the-drop"
+                class="group text-sm sm:text-base font-semibold text-brand-charcoal hover:text-brand-orange transition-colors duration-200 inline-flex items-center gap-2 py-3 border-b border-brand-charcoal hover:border-brand-orange"
+              >
+                <span>Explore Genz Tostone</span>
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <!-- Minimalist Trust Bar -->
+            <div class="mt-14 pt-8 border-t border-brand-border grid grid-cols-3 gap-4 max-w-lg">
+              <div>
+                <p class="font-display font-bold text-lg sm:text-xl text-brand-charcoal">70%</p>
+                <p class="text-xs text-brand-muted mt-0.5">Green Plantains</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-lg sm:text-xl text-brand-charcoal">2× Pressed</p>
+                <p class="text-xs text-brand-muted mt-0.5">Thick-Cut Crunch</p>
+              </div>
+              <div>
+                <p class="font-display font-bold text-lg sm:text-xl text-brand-charcoal">Zero</p>
+                <p class="text-xs text-brand-muted mt-0.5">Artificial Additives</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Studio Product Showcase -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl bg-brand-orange p-7 sm:p-10 aspect-[4/5] flex items-center justify-center overflow-hidden grain-overlay">
+              <div class="absolute inset-x-6 bottom-6 top-16 rounded-2xl bg-brand-white"></div>
+
+              <!-- Realistic Studio Stand-Up Pouch -->
+              <div class="relative z-10 w-56 sm:w-64 bg-brand-white border-2 border-brand-charcoal rounded-2xl studio-shadow transform -rotate-3 overflow-hidden">
+                <div class="h-7 bg-brand-surface border-b border-brand-border flex items-center justify-between px-3">
+                  <span class="w-2 h-0.5 bg-brand-charcoal/40"></span>
+                  <span class="text-[9px] font-bold tracking-[0.18em] uppercase text-brand-muted">RESEALABLE ZIP</span>
+                  <span class="w-2 h-0.5 bg-brand-charcoal/40"></span>
+                </div>
+                <div class="h-1.5 bg-brand-orange"></div>
+
+                <div class="p-5 relative pouch-crease">
+                  <div class="flex items-center justify-between text-[10px] font-bold tracking-widest uppercase text-brand-charcoal/70 mb-4">
+                    <span>GENZ CRAVINGS</span>
+                    <span class="text-brand-orange">BATCH 01</span>
+                  </div>
+
+                  <div class="mb-4">
+                    <p class="font-display font-bold text-3xl leading-none tracking-tight text-brand-charcoal">GENZ</p>
+                    <p class="font-display font-bold text-3xl leading-none tracking-tight text-brand-orange">TOSTONE.</p>
+                  </div>
+
+                  <p class="text-[11px] font-medium text-brand-muted leading-snug mb-5">
+                    Twice-pressed green plantains. Lightly salted. Unapologetic crunch.
+                  </p>
+
+                  <div class="h-24 rounded-xl bg-brand-orange/10 border border-brand-orange/25 flex items-center justify-center relative overflow-hidden">
+                    <svg class="w-28 h-20" viewBox="0 0 140 90" fill="none">
+                      <ellipse cx="52" cy="48" rx="30" ry="22" transform="rotate(-12 52 48)" fill="#E69A28" stroke="#9A5B0A" stroke-width="1.5"/>
+                      <ellipse cx="52" cy="48" rx="22" ry="15" transform="rotate(-12 52 48)" fill="#F5B841"/>
+                      <path d="M38 45C46 42 58 43 65 49M42 53C50 50 57 52 62 55" stroke="#B97314" stroke-width="1.4" stroke-linecap="round"/>
+                      <ellipse cx="88" cy="43" rx="28" ry="21" transform="rotate(14 88 43)" fill="#D98B1C" stroke="#8C4F06" stroke-width="1.5"/>
+                      <ellipse cx="88" cy="43" rx="20" ry="14" transform="rotate(14 88 43)" fill="#F7C252"/>
+                      <path d="M75 40C84 39 94 41 100 46M79 48C86 47 93 49 97 52" stroke="#B97314" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+
+                  <div class="mt-4 pt-3 border-t border-brand-border flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-brand-charcoal">
+                    <span>SEA SALT</span>
+                    <span>NET WT. 150G</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Golden Tostone Chips & Sea Salt Crystals -->
+              <svg class="absolute bottom-8 left-7 z-20 w-24 h-20 drop-shadow-md" viewBox="0 0 100 80" fill="none">
+                <ellipse cx="48" cy="42" rx="34" ry="24" transform="rotate(-18 48 42)" fill="#E0911E" stroke="#8C4F06" stroke-width="1.5"/>
+                <ellipse cx="48" cy="42" rx="26" ry="17" transform="rotate(-18 48 42)" fill="#F6BC46"/>
+                <path d="M30 41C42 36 55 37 66 43M35 49C45 45 55 46 62 50" stroke="#B56E10" stroke-width="1.6" stroke-linecap="round"/>
+                <rect x="76" y="54" width="4" height="4" rx="0.8" transform="rotate(20 76 54)" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.6"/>
+                <rect x="20" y="62" width="3.5" height="3.5" rx="0.8" transform="rotate(-15 20 62)" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.6"/>
+              </svg>
+
+              <svg class="absolute bottom-10 right-7 z-20 w-24 h-20 drop-shadow-md" viewBox="0 0 100 80" fill="none">
+                <ellipse cx="52" cy="42" rx="32" ry="23" transform="rotate(22 52 42)" fill="#D98818" stroke="#8C4F06" stroke-width="1.5"/>
+                <ellipse cx="52" cy="42" rx="24" ry="16" transform="rotate(22 52 42)" fill="#F8C658"/>
+                <path d="M36 37C47 36 58 39 67 45M40 46C49 45 57 47 63 51" stroke="#B56E10" stroke-width="1.6" stroke-linecap="round"/>
+                <rect x="22" y="24" width="4" height="4" rx="0.8" transform="rotate(32 22 24)" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.6"/>
+                <rect x="80" y="28" width="3.5" height="3.5" rx="0.8" transform="rotate(10 80 28)" fill="#FFFFFF" stroke="#E5E5E5" stroke-width="0.6"/>
+              </svg>
+
+              <div class="absolute top-5 right-6 bg-brand-white px-3.5 py-1.5 rounded-full text-[11px] font-bold tracking-wider uppercase text-brand-charcoal">
+                GENZ TOSTONE • 01
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. ABOUT GENZ CRAVINGS ==================== -->
+    <section id="our-story" class="border-b border-brand-border py-20 sm:py-28">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="mb-8">
+          <span class="text-xs font-bold tracking-[0.2em] uppercase text-brand-orange">01 / WHO WE ARE</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+          <div class="lg:col-span-6">
+            <h2 class="font-display font-bold text-3xl sm:text-5xl leading-[1.08] tracking-[-0.03em] text-brand-charcoal">
+              Not your average street-corner snack. We’re reimagining a classic.
+            </h2>
+          </div>
+
+          <div class="lg:col-span-6 space-y-6 text-base sm:text-lg text-brand-muted leading-relaxed">
+            <p>
+              Our first product is GenZ ToStone, a premium plantain snack made for people who appreciate good taste, convenience and quality.
+            </p>
+            <p class="text-brand-charcoal font-medium">
+              We took the iconic crunch of traditional plantains and gave it a modern, minimalist refresh. Rooted in farm-to-table simplicity and designed for fast-paced days, late-night study sessions, and everything in between—we don’t just make plantain chips; we craft everyday culture.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. MEET OUR FIRST PRODUCT ==================== -->
+<!-- ==================== 4. MEET OUR FIRST PRODUCT ==================== -->
+    <section id="the-drop" class="border-b border-brand-border py-20 sm:py-28 bg-brand-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="max-w-2xl mb-14 sm:mb-16">
+          <span class="text-xs font-bold tracking-[0.2em] uppercase text-brand-orange block mb-4">02 / THE FIRST DROP</span>
+          <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-[-0.03em] text-brand-charcoal mb-4">
+            Meet Genz Tostone.
+          </h2>
+          <p class="text-base sm:text-lg text-brand-muted leading-relaxed">
+            Twice-pressed green plantains cooked to golden perfection and lightly seasoned.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+          
+          <!-- PRODUCT 1: Solo Pack -->
+          <article class="group rounded-2xl border border-brand-border hover:border-brand-orange transition-colors duration-200 bg-brand-white flex flex-col justify-between overflow-hidden">
+            <div>
+              <div class="bg-brand-white border-b border-brand-border h-72 flex items-center justify-center p-6 relative overflow-hidden">
+                <span class="absolute top-4 left-4 z-10 bg-brand-surface text-[11px] font-bold tracking-widest uppercase text-brand-muted px-2.5 py-1 rounded-full"></span>
+                <img
+                  src="./Picture Folder/Small.PNG"
+                  alt="Genz Tostone Small Jar - Solo Pack"
+                  class="max-h-full w-auto object-contain"
+                />
+              </div>
+
+              <div class="p-7 pb-4">
+                <div class="flex items-baseline justify-between gap-2 mb-2">
+                  <h3 class="font-display font-bold text-2xl text-brand-charcoal">Mini Pack</h3>
+                  <span class="text-xs font-semibold text-brand-muted"></span>
+                </div>
+                <p class="text-sm text-brand-muted leading-relaxed">
+                  Built for your tote bag, desk drawer, or mid-day commute.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-7 pt-4">
+              <div class="flex items-center justify-between mb-5 pt-4 border-t border-brand-border">
+                <span class="text-xs uppercase tracking-wider font-semibold text-brand-muted">Price</span>
+                <span class="font-display font-bold text-2xl text-brand-charcoal">₦2,499</span>
+              </div>
+              <button
+                onclick="addToCart('mini', 'Mini Pack (75g)', 2499)"
+                class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold text-sm py-3.5 px-6 rounded-xl transition-colors duration-200 cursor-pointer"
+              >
+                Order Mini
+              </button>
+            </div>
+          </article>
+
+          <!-- PRODUCT 2: Hangout Pack -->
+          <article class="group rounded-2xl border-2 border-brand-orange bg-brand-white flex flex-col justify-between overflow-hidden relative">
+            <div>
+              <div class="bg-brand-white border-b border-brand-border h-72 flex items-center justify-center p-6 relative overflow-hidden">
+                <span class="absolute top-4 left-4 z-10 bg-brand-surface text-[11px] font-bold tracking-widest uppercase text-brand-charcoal px-2.5 py-1 rounded-full"></span>
+            
+                <img
+                  src="./Picture Folder/Mediumm.jpg"
+                  alt="Genz Tostone Medium Jar - Hangout Pack"
+                  class="max-h-full w-auto object-contain"
+                />
+              </div>
+
+              <div class="p-7 pb-4">
+                <div class="flex items-baseline justify-between gap-2 mb-2">
+                  <h3 class="font-display font-bold text-2xl text-brand-charcoal">Midi Pack</h3>
+                  <span class="text-xs font-semibold text-brand-muted"></span>
+                </div>
+                <p class="text-sm text-brand-muted leading-relaxed">
+                  Made for movie nights, road trips, and sharing (or not).
+                </p>
+              </div>
+            </div>
+
+            <div class="p-7 pt-4">
+              <div class="flex items-center justify-between mb-5 pt-4 border-t border-brand-border">
+                <span class="text-xs uppercase tracking-wider font-semibold text-brand-muted">Price</span>
+                <span class="font-display font-bold text-2xl text-brand-charcoal">₦4,499</span>
+              </div>
+              <button
+                onclick="addToCart('hangout', 'Hangout Pack (150g)', 4499)"
+                class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold text-sm py-3.5 px-6 rounded-xl transition-colors duration-200 cursor-pointer"
+              >
+                Order Hangout
+              </button>
+            </div>
+          </article>
+
+          <!-- PRODUCT 3: The Stash Box -->
+          <article class="group rounded-2xl border border-brand-border hover:border-brand-orange transition-colors duration-200 bg-brand-white flex flex-col justify-between overflow-hidden">
+            <div>
+              <div class="bg-brand-white border-b border-brand-border h-72 flex items-center justify-center p-6 relative overflow-hidden">
+                <span class="absolute top-4 left-4 z-10 bg-brand-surface text-[11px] font-bold tracking-widest uppercase text-brand-charcoal px-2.5 py-1 rounded-full"></span>
+                <img
+                  src="./Picture Folder/Largge.jpg"
+                  alt="Genz Tostone Large Jar - The Stash Box"
+                  class="max-h-full w-auto object-contain"
+                />
+              </div>
+
+              <div class="p-7 pb-4">
+                <div class="flex items-baseline justify-between gap-2 mb-2">
+                  <h3 class="font-display font-bold text-2xl text-brand-charcoal">Super Pack</h3>
+                  <span class="text-xs font-semibold text-brand-muted"></span>
+                </div>
+                <p class="text-sm text-brand-muted leading-relaxed">
+                  Stock up for the week and never run dry when cravings hit.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-7 pt-4">
+              <div class="flex items-center justify-between mb-5 pt-4 border-t border-brand-border">
+                <span class="text-xs uppercase tracking-wider font-semibold text-brand-muted">Price</span>
+                <span class="font-display font-bold text-2xl text-brand-charcoal">₦6,499</span>
+              </div>
+              <button
+                onclick="addToCart('stash', 'The Stash Box ', 6499)"
+                class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold text-sm py-3.5 px-6 rounded-xl transition-colors duration-200 cursor-pointer"
+              >
+                Order The Stash
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. WHY GENZ CRAVINGS? ==================== -->
+    <section id="why-us" class="border-b border-brand-border py-20 sm:py-28 bg-brand-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="max-w-2xl mb-14 sm:mb-16">
+          <span class="text-xs font-bold tracking-[0.2em] uppercase text-brand-orange block mb-4">03 / THE STANDARD</span>
+          <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-[-0.03em] text-brand-charcoal">
+            Why we do it differently.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+          <div class="md:col-span-3 rounded-2xl border border-brand-border bg-brand-white p-8 sm:p-10 flex flex-col justify-between min-h-[250px]">
+            <span class="font-display font-bold text-3xl text-brand-orange">01.</span>
+            <div class="mt-8">
+              <h3 class="font-display font-bold text-2xl text-brand-charcoal mb-3">Farm-to-Bag Freshness</h3>
+              <p class="text-sm sm:text-base text-brand-muted leading-relaxed">
+                Sourced directly from local farms at peak maturity. Real plantains, sliced and pressed fresh.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-3 rounded-2xl bg-brand-orange text-white p-8 sm:p-10 flex flex-col justify-between min-h-[250px]">
+            <span class="font-display font-bold text-3xl text-white/90">02.</span>
+            <div class="mt-8">
+              <h3 class="font-display font-bold text-2xl text-white mb-3">Built for Your Pace</h3>
+              <p class="text-sm sm:text-base text-white/90 leading-relaxed">
+                Whether you’re editing at 2 AM, commuting across town. Genz Tostone fits seamlessly for your taste.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-2 rounded-2xl border border-brand-border bg-brand-white p-8 flex flex-col justify-between min-h-[250px]">
+            <span class="font-display font-bold text-3xl text-brand-orange">03.</span>
+            <div class="mt-8">
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-brand-charcoal mb-3">Uncompromising Quality</h3>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                Small-batch cooked in clean oil with zero artificial preservatives. Every single crunch tastes as fresh as the first bite.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-2 rounded-2xl border border-brand-border bg-brand-white p-8 flex flex-col justify-between min-h-[250px]">
+            <span class="font-display font-bold text-3xl text-brand-orange">04.</span>
+            <div class="mt-8">
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-brand-charcoal mb-3">Convenience, Elevated</h3>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                Resealable, mess-free, aesthetic packaging that looks just as good on your desk setup as it tastes.
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-2 rounded-2xl bg-brand-orange text-white p-8 flex flex-col justify-between min-h-[250px]">
+            <span class="font-display font-bold text-3xl text-white/90">05.</span>
+            <div class="mt-8">
+              <h3 class="font-display font-bold text-xl sm:text-2xl text-white mb-3">A New Snacking Culture</h3>
+              <p class="text-sm text-white/90 leading-relaxed">
+                We’re moving past boring, greasy snacks. This is bold flavor and clean design for a generation that cares about both.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. CUSTOMER REVIEWS (PICTURE SLIDE) ==================== -->
+    <section id="reviews" class="border-b border-brand-border py-20 sm:py-28 bg-brand-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <!-- Header & Slider Controls -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 sm:mb-16">
+          <div>
+            <span class="text-xs font-bold tracking-[0.2em] uppercase text-brand-orange block mb-4">04 / THE COMMUNITY</span>
+            <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-[-0.03em] text-brand-charcoal">
+              Co-signed by the culture.
+            </h2>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button
+              id="prev-review-btn"
+              aria-label="Previous Review"
+              class="w-12 h-12 rounded-full border border-brand-border hover:border-brand-orange hover:text-brand-orange flex items-center justify-center transition-colors cursor-pointer"
+            >
+              ←
+            </button>
+            <button
+              id="next-review-btn"
+              aria-label="Next Review"
+              class="w-12 h-12 rounded-full border border-brand-border hover:border-brand-orange hover:text-brand-orange flex items-center justify-center transition-colors cursor-pointer"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        <!-- Horizontal Picture Slide Track -->
+        <div id="reviews-track" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2">
+          
+          <!-- Slide 1 -->
+          <article class="min-w-[88%] sm:min-w-[46%] lg:min-w-[38%] snap-start rounded-2xl border border-brand-border overflow-hidden bg-brand-white flex flex-col">
+            <div class="h-64 bg-brand-surface relative overflow-hidden border-b border-brand-border">
+              <img
+                src="./Picture Folder/Desk - Carry.jpg"
+                alt="Desk setup with iced coffee and snack"
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-4 left-4 bg-brand-white/95 backdrop-blur-xs px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase text-brand-charcoal">
+                DESK CARRY
+              </span>
+            </div>
+            <div class="p-7 flex-1 flex flex-col justify-between">
+              <p class="text-base sm:text-lg font-medium text-brand-charcoal leading-relaxed mb-6">
+                “Finally a local snack brand that actually understands aesthetics and flavor. The crunch is unmatched.”
+              </p>
+              <div>
+                <p class="font-display font-bold text-sm text-brand-charcoal">Tunde A.</p>
+                <p class="text-xs text-brand-muted">Creative Director</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="min-w-[88%] sm:min-w-[46%] lg:min-w-[38%] snap-start rounded-2xl border border-brand-border overflow-hidden bg-brand-white flex flex-col">
+            <div class="h-64 bg-brand-surface relative overflow-hidden border-b border-brand-border">
+              <img
+                src="./Picture Folder/Hangout Session.jpg"
+                alt="Friends hanging out outdoors in golden hour sunlight"
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-4 left-4 bg-brand-orange px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase text-white">
+                HANGOUT SESSION
+              </span>
+            </div>
+            <div class="p-7 flex-1 flex flex-col justify-between">
+              <p class="text-base sm:text-lg font-medium text-brand-charcoal leading-relaxed mb-6">
+                “The Hangout Pack barely lasts ten minutes whenever I bring it around my friends. Instant staple.”
+              </p>
+              <div>
+                <p class="font-display font-bold text-sm text-brand-charcoal">Zainab M.</p>
+                <p class="text-xs text-brand-muted">Content Creator</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="min-w-[88%] sm:min-w-[46%] lg:min-w-[38%] snap-start rounded-2xl border border-brand-border overflow-hidden bg-brand-white flex flex-col">
+            <div class="h-64 bg-brand-surface relative overflow-hidden border-b border-brand-border">
+              <img
+                src="./Picture Folder/Studio - Fuel.jpg"
+                alt="Product designer workspace session"
+                class="w-full h-full object-cover"
+              />
+              <span class="absolute top-4 left-4 bg-brand-white/95 backdrop-blur-xs px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase text-brand-charcoal">
+                STUDIO FUEL
+              </span>
+            </div>
+            <div class="p-7 flex-1 flex flex-col justify-between">
+              <p class="text-base sm:text-lg font-medium text-brand-charcoal leading-relaxed mb-6">
+                “Thick, crispy, and not overly oily like regular chips. You can actually taste the real plantain.”
+              </p>
+              <div>
+                <p class="font-display font-bold text-sm text-brand-charcoal">David O.</p>
+                <p class="text-xs text-brand-muted">Product Designer</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. RETAILERS, DISTRIBUTORS & RESELLERS ==================== -->
+    <section id="resellers" class="border-b border-brand-border py-20 sm:py-28 bg-brand-white">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="rounded-3xl border-2 border-brand-orange bg-brand-white p-8 sm:p-12 lg:p-16 relative overflow-hidden reseller-card">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+            <!-- Left Column: Headline & Hook -->
+            <div class="lg:col-span-7">
+              <span class="text-xs font-bold tracking-[0.2em] uppercase text-brand-orange block mb-4">
+                05 / WHOLESALE &amp; DISTRIBUTION
+              </span>
+
+              <h2 class="font-display font-bold text-3xl sm:text-5xl lg:text-[54px] leading-[1.04] tracking-[-0.03em] text-brand-charcoal uppercase mb-6">
+                STOCK GENZ. <span class="text-brand-orange block sm:inline">SELL THE CRAVING.</span>
+              </h2>
+
+              <p class="font-display font-semibold text-lg sm:text-xl text-brand-charcoal leading-snug mb-5">
+                Got a store, supermarket, mini-mart or an audience that loves good snacks? Let’s do business.
+              </p>
+
+              <p class="text-base text-brand-muted leading-relaxed mb-4">
+                Genz Cravings welcomes retailers, distributors and resellers who want to bring Genz Tostone closer to more people.
+              </p>
+
+              <p class="font-display font-semibold text-base sm:text-lg text-brand-charcoal">
+                Let’s grow together, one crunch at a time.
+              </p>
+            </div>
+
+            <!-- Right Column: Partner Channels & CTA Card -->
+            <div class="lg:col-span-5">
+              <div class="rounded-2xl bg-brand-orange text-white p-7 sm:p-9 flex flex-col justify-between">
+                <div>
+                  <p class="text-xs font-bold tracking-[0.18em] uppercase text-white/80 mb-5">
+                    WHO CAN PARTNER
+                  </p>
+
+                  <ul class="space-y-3.5 text-sm sm:text-base font-medium mb-8">
+                    <li class="flex items-center gap-3 pb-3.5 border-b border-white/20">
+                      <span class="w-2 h-2 rounded-full bg-white shrink-0"></span>
+                      <span>Supermarkets &amp; Retail Stores</span>
+                    </li>
+                    <li class="flex items-center gap-3 pb-3.5 border-b border-white/20">
+                      <span class="w-2 h-2 rounded-full bg-white shrink-0"></span>
+                      <span>Mini-Marts &amp; Campus Vendors</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <span class="w-2 h-2 rounded-full bg-white shrink-0"></span>
+                      <span>Distributors &amp; Independent Resellers</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <button
+                  type="button"
+                  onclick="toggleResellerModal(true)"
+                  class="w-full bg-brand-white hover:bg-brand-surface text-brand-orange font-display font-bold text-sm sm:text-base tracking-wider uppercase py-4 px-6 rounded-xl transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <span>BECOME A RESELLER</span>
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. FUTURE DROPS TEASER BANNER ==================== -->
+    <section id="early-access" class="bg-brand-orange text-white py-20 sm:py-24">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 text-center lg:text-left">
+          <h2 class="font-display font-bold text-3xl sm:text-5xl tracking-[-0.03em]">
+            Tostone is just the beginning.
+          </h2>
+
+          <button
+            id="order-button"
+            type="submit"
+            class="bg-brand-charcoal hover:bg-black text-white font-semibold text-base sm:text-lg px-9 py-4 sm:py-5 rounded-xl transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Order Now
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 9. MINIMALIST FOOTER ==================== -->
+  <footer class="bg-brand-white py-12 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <img src="./Picture Folder/IMG_1943-removebg-preview.png" style="width: 80px;" alt="Genz Cravings Logo">
+        <p class="text-xs text-brand-muted mt-1">Everyday snacking, reimagined.</p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-6 text-sm font-medium text-brand-charcoal/80">
+        <a href="https://www.instagram.com/genzcravings?lqvp=MWxtZ21iM3I5ZWVqcg%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener" class="hover:text-brand-orange transition-colors">Instagram</a>
+        <a href="https://www.tiktok.com/@genzcravings?_r=1&amp;_t=ZS-9BVMNryIV1B" target="_blank" rel="noopener" class="hover:text-brand-orange transition-colors">TikTok</a>
+        <a href="https://x.com/genzcravings?s=11" target="_blank" rel="noopener" class="hover:text-brand-orange transition-colors">Twitter</a>
+        <a href="https://wa.me/2349036414529" target="_blank" rel="noopener" class="hover:text-brand-orange transition-colors">WhatsApp</a>
+      </div>
+
+      <p class="text-xs text-brand-muted">© 2026 Genz Cravings. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== 10. RESELLER INQUIRY MODAL ==================== -->
+  <div id="reseller-backdrop" onclick="toggleResellerModal(false)" class="fixed inset-0 bg-black/50 z-50 hidden"></div>
+
+  <div
+    id="reseller-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="reseller-modal-title"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 pointer-events-none"
+  >
+    <div class="bg-brand-white border-2 border-brand-charcoal rounded-2xl w-full max-w-md p-6 sm:p-8 pointer-events-auto shadow-2xl">
+      <div class="flex items-start justify-between gap-4 mb-5">
+        <div>
+          <span class="text-[11px] font-bold tracking-[0.18em] uppercase text-brand-orange">PARTNER WITH US</span>
+          <h3 id="reseller-modal-title" class="font-display font-bold text-2xl text-brand-charcoal mt-1">
+            Become a Reseller
+          </h3>
+        </div>
+        <button
+          type="button"
+          onclick="toggleResellerModal(false)"
+          aria-label="Close Reseller Form"
+          class="w-9 h-9 rounded-full border border-brand-border hover:border-brand-orange flex items-center justify-center text-brand-charcoal cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+
+      <form id="reseller-form" class="space-y-4">
+        <div>
+          <label for="reseller-name" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal mb-1.5">
+            Your Name / Store Name
+          </label>
+          <input
+            type="text"
+            id="reseller-name"
+            required
+            placeholder="e.g. Bode / Cornerstone Mini-Mart"
+            class="w-full bg-brand-surface border border-brand-border text-sm px-4 py-3 rounded-xl focus:outline-none focus:border-brand-orange"
+          />
+        </div>
+
+        <div>
+          <label for="reseller-type" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal mb-1.5">
+            Partner Category
+          </label>
+          <select
+            id="reseller-type"
+            class="w-full bg-brand-surface border border-brand-border text-sm px-4 py-3 rounded-xl focus:outline-none focus:border-brand-orange"
+          >
+            <option value="Retail Store / Supermarket">Retail Store / Supermarket</option>
+            <option value="Mini-Mart">Mini-Mart</option>
+            <option value="Distributor">Distributor</option>
+            <option value="Independent Reseller">Independent Reseller</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="reseller-location" class="block text-xs font-bold uppercase tracking-wider text-brand-charcoal mb-1.5">
+            City / Location
+          </label>
+          <input
+            type="text"
+            id="reseller-location"
+            required
+            placeholder="e.g. Lekki, Yaba, Abuja, Port Harcourt"
+            class="w-full bg-brand-surface border border-brand-border text-sm px-4 py-3 rounded-xl focus:outline-none focus:border-brand-orange"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-display font-bold text-sm uppercase tracking-wider py-4 px-6 rounded-xl transition-colors cursor-pointer mt-2"
+        >
+          Send Inquiry on WhatsApp →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== 11. SLIDE-OUT ORDERING DRAWER ==================== -->
+  <div id="cart-backdrop" onclick="toggleCart(false)" class="fixed inset-0 bg-black/40 z-50 hidden"></div>
+
+  <aside
+    id="cart-drawer"
+    class="fixed top-0 right-0 h-full w-full sm:w-[420px] bg-brand-white z-50 border-l border-brand-border transform translate-x-full transition-transform duration-200 flex flex-col justify-between"
+  >
+    <!-- Drawer Header -->
+    <div class="p-6 border-b border-brand-border flex items-center justify-between">
+      <div>
+        <h3 class="font-display font-bold text-xl text-brand-charcoal">Your Cravings Bag</h3>
+        <p class="text-xs text-brand-muted mt-0.5">Fast delivery via WhatsApp checkout</p>
+      </div>
+      <button
+        onclick="toggleCart(false)"
+        aria-label="Close Cart"
+        class="w-9 h-9 rounded-full border border-brand-border hover:border-brand-orange flex items-center justify-center text-brand-charcoal cursor-pointer"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- Drawer Items -->
+    <div id="cart-items-container" class="flex-1 overflow-y-auto p-6 space-y-4">
+      <!-- Populated dynamically by script.js -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="p-6 border-t border-brand-border bg-brand-surface space-y-4">
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-medium text-brand-muted">Subtotal</span>
+        <span id="cart-subtotal" class="font-display font-bold text-2xl text-brand-charcoal">₦0</span>
+      </div>
+
+      <input
+        type="text"
+        id="delivery-address"
+        placeholder="Enter your delivery area (e.g. Lekki, Yaba, Ikeja)"
+        class="w-full bg-white border border-brand-border text-sm px-4 py-3 rounded-xl focus:outline-none focus:border-brand-orange"
+      />
+
+      <button
+        id="whatsapp-checkout-btn"
+        onclick="checkoutWhatsApp()"
+        class="w-full bg-brand-orange hover:bg-brand-orangeHover text-white font-semibold text-sm py-4 px-6 rounded-xl transition-colors cursor-pointer"
+      >
+        Complete Order on WhatsApp →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
